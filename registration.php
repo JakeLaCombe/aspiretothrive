@@ -6,6 +6,7 @@
     <link href="Styles/styles.css" rel="stylesheet"/>
   </head>
   <body>
+	<nav><img src="Images/aspire.png" width="100" height="100"/></nav>
     <div id="body-wrapper">
           <h1 id="registration-header">You're only seconds away from a fresh start in life!</h1>
     <section>

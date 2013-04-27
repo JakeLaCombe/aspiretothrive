@@ -6,24 +6,63 @@
     <link href="Styles/styles.css" rel="stylesheet"/>
   </head>
   <body>
+  <nav><img src="Images/aspire.png" width="100" height="100"/></nav>
    <div id="body-wrapper">
-    <nav>
-    </nav>
     <section> 
-      <div class="profile-block">
-        <img src="Images/ProfilePic.jpg" width="100" height="100" alt="Profile Image"/>
-        <div class="profile-information">
-        	<p>Name: Jake LaCombe</p>
-            <p>Active Since: May 2013</p>
-        </div>
-      </div>
-       <div class="profile-block">
-          <img src="Images/ProfilePic.jpg" width="100" height="100" alt="Profile Image"/>
-          <div class="profile-information">
-          	  <p>Name: Jake LaCombe</p>
-              <p>Active Since: May 2013</p>
-          </div>
-        </div>
+      
+        	<?php
+  $con=mysqli_connect("aspire.a.tylr.us","aspiredb","thrive","aspire_thrive_db");
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+$result = mysqli_query($con,"SELECT * FROM users WHERE id = ".$_REQUEST[id]);
+
+while($row = mysqli_fetch_array($result))
+  {
+    $mentorid = $row['mentorid'];
+    echo "<div class='profile-block'>";
+    echo "<a href='http://a.tylr.us/aspire/static/mentor.php?id=".$row['id']."'><img src='Images/".$row['image'];
+  echo "' width='100' height='100' alt='Profile Image'/></a><div class='profile-information'><h1>";
+  if($mentorid > 0){
+    echo "Mentoree";
+  }
+  else{
+    echo "Mentor";
+  }
+  echo "</h1><a href='http://a.tylr.us/aspire/static/mentor.php?id=".$row['id']."'><p>Name: ";
+  echo $row['firstname'] . " " . $row['lastname'];
+  echo "</p></a><p>Active Since: ";
+  echo $row['since'];
+  echo "</p>";
+  echo "</div></div>";
+  
+  }
+
+  if($mentorid > 0){
+    $result = mysqli_query($con,"SELECT * FROM users WHERE id = ".$mentorid);
+
+while($row = mysqli_fetch_array($result))
+  {
+    echo "<div class='profile-block'>";
+    echo "<a href='http://a.tylr.us/aspire/static/mentor.php?id=".$row['id']."'><img src='Images/".$row['image'];
+  echo "' width='100' height='100' alt='Profile Image'/></a><div class='profile-information'><h1>";
+    echo "Mentor";
+  echo "</h1><a href='http://a.tylr.us/aspire/static/mentor.php?id=".$row['id']."'><p>Name: ";
+  echo $row['firstname'] . " " . $row['lastname'];
+  echo "</p></a><p>Active Since: ";
+  echo $row['since'];
+  echo "</p>";
+  echo "</div></div>";
+  }
+}
+
+mysqli_close($con);
+?>
+        
+       
       </section>
       <section>
         <div id="news">
