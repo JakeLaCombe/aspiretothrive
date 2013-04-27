@@ -10,7 +10,7 @@
    <div id="body-wrapper">
     <section> 
       
-        	<?php
+          <?php
   $con=mysqli_connect("aspire.a.tylr.us","aspiredb","thrive","aspire_thrive_db");
 // Check connection
 if (mysqli_connect_errno())
@@ -62,6 +62,9 @@ while($row = mysqli_fetch_array($result))
 mysqli_close($con);
 ?>
         
+
+
+        
        
       </section>
       <section>
@@ -77,46 +80,72 @@ mysqli_close($con);
       <section>
         <div id="wall">
           <h1>Wall</h1>
-          <article class="first_of_list">
-            <img src="Images/ProfilePic.jpg" width="100" height="100"/>
-            <div>
-              <h2>Jake LaCombe</h2>
-              <p>Way to keep it up buddy! That’s great you found a job as a car mechanic! You’ll do great, I’m sure of it!</p>
-            </div>
-          </article>
-          <article>
-            <img src="Images/ProfilePic.jpg" width="100" height="100"/>
-            <div>
-              <h2>Jake LaCombe</h2>
-              <p>Way to keep it up buddy! T</p>
-            </div>
-          </article>
-          <article>
-            <img src="Images/ProfilePic.jpg" width="100" height="100"/>
-            <div>
-              <h2>Jake LaCombe</h2>
-              <p>Way to keep it up buddy! That’s great you found a job as a car mechanic! You’ll do great, I’m sure of it!</p>
-            </div>
-          </article>
-          <article>
-            <img src="Images/ProfilePic.jpg" width="100" height="100"/>
-            <div>
-              <h2>Jake LaCombe</h2>
-              <p>Way to keep it up buddy! That’s great you found a job as a car mechanic! You’ll do great, I’m sure of it!</p>
-            </div>
-          </article>
-        </div>
-         <div id="team-mates">
-          <h1>Team Mates</h1>
-          <article class="first_of_list">
-            <img src="Images/ProfilePic.jpg" width="100" height="100"/>
-            <span>Jake LaCombe</span>
-          </article>
-          <article>
-            <img src="Images/ProfilePic.jpg" width="100" height="100"/>
-            <span>Jake LaCombe</span>
-          </article>
-        </div> 
+
+<?php
+  $con=mysqli_connect("aspire.a.tylr.us","aspiredb","thrive","aspire_thrive_db");
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+$result = mysqli_query($con,"SELECT * FROM wallposts WHERE toid = ".$_REQUEST[id]." ORDER BY id DESC LIMIT 15");
+
+while($row = mysqli_fetch_array($result))
+  {
+    $message = $row['message'];
+    $fromid = $row['fromid'];
+    $result = mysqli_query($con,"SELECT * FROM users WHERE id = ".$fromid);
+    while($row = mysqli_fetch_array($result))
+      {
+        $fromimage = $row['image'];
+        $fromname = $row['firstname']." ".$row['lastname'];
+      }
+    echo "<article>";
+    echo "<a href='http://a.tylr.us/aspire/static/mentor.php?id=".$fromid."'><img src='Images/".$fromimage."' width='100' height='100'/></a>";
+    echo "<div><a href='http://a.tylr.us/aspire/static/mentor.php?id=".$fromid."'><h2>".$fromname."</h2></a>";
+    echo "<p>".$message."</p></div></article>";
+            
+  }
+
+  echo "</div>";
+
+mysqli_close($con);
+?>
+
+ 
+
+<?php
+  $con=mysqli_connect("aspire.a.tylr.us","aspiredb","thrive","aspire_thrive_db");
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+$result = mysqli_query($con,"SELECT * FROM users WHERE id = ".$_REQUEST[id]);
+
+while($row = mysqli_fetch_array($result))
+  {
+    $teamid = $row['teamid'];
+    $id = $row['id'];
+    $result = mysqli_query($con,"SELECT * FROM users WHERE teamid = ".$teamid." AND id != ".$id);
+    echo "<div id='team-mates'><h1>Team Mates</h1>";
+    while($row = mysqli_fetch_array($result))
+    {
+      echo "<article>";
+      echo "<a href='http://a.tylr.us/aspire/static/mentor.php?id=".$row['id']."'><img src='Images/".$row['image']."' width='100' height='100'/></a>";
+      echo "<a href='http://a.tylr.us/aspire/static/mentor.php?id=".$row['id']."'><span>".$row['firstname']." ".$row['lastname']."</span></a></article>";
+    }
+    echo "</div>";
+}
+
+
+mysqli_close($con);
+?>
+
+         
+
       </section>
      </div>
     </body>
