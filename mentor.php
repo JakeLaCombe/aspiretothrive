@@ -12,6 +12,7 @@
       
           <?php
   $con=mysqli_connect("aspire.a.tylr.us","aspiredb","thrive","aspire_thrive_db");
+  
 // Check connection
 if (mysqli_connect_errno())
   {

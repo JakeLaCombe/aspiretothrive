@@ -138,6 +138,11 @@ section div:first-child
 }
 
 /* Mentor information for mentee profiles*/
+#mentor-information img
+{
+	vertical-align:middle;
+}
+
 #mentor-information h1
 {
 	margin:0px;
@@ -191,3 +196,5 @@ section div:first-child
 {
 	margin-left:180px;
 }
+
+#mentor-information 

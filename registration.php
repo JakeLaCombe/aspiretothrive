@@ -19,7 +19,7 @@
       </ul>
     </div> 
       <div>
-      <form id="registration-form">
+      <form id="registration-form" action="registrationSuccessful.php">
       <p>
         <label for="first-name">First Name:</label><input id="first-name" type="text" name="first-name"/>
       </p>
