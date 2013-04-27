@@ -1,0 +1,42 @@
+/*
+ * CSS for Timeliner 1.2
+ *
+ * This CSS is for styling the plugin.
+ * Use timeliner.css for functionality changes.
+ */
+
+/* The container */
+#example1{
+	background:#fff url(../images/loading.gif) center no-repeat;
+	border:1px solid #dedede;
+}
+/* Each slide */
+#example1 .slide{
+	background:#fff url(../images/slide2.jpg);
+	padding:140px 45px 0 45px;
+	font: 20px 'segoe ui',helvetica,arial,sans-serif;
+	line-height:120%;
+	color:#3c3c3c;
+}
+/* The timeline background */
+#example1 .timeline{
+	background:#ddd;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #fff;
+}
+/* The timeline fill bar */
+#example1 .innertimeline{
+	background:#cf3300;
+}
+/* The time display */
+#example1 .timedisplay{
+	color:#777;
+}
+/* Each node */
+#example1 .node{
+	background:url(../images/node.png) center no-repeat;
+	width:26px;
+	height:26px;
+}
+/* The active node */
+

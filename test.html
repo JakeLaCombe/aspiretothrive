@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <link href="style.css" rel="stylesheet"  />
+		<link rel="stylesheet" href="slider/css/demo.css">
+		
+		<!-- INCLUDE TIMELINER CSS: -->
+		<link rel="stylesheet" href="slider/css/timeliner.css">
+		<link rel="stylesheet" href="slider/css/timeliner_styling.css">
+		<link rel="stylesheet" href="slider/css/timeliner_styling_example2.css">
+		<link rel="stylesheet" href="slider/css/timeliner_styling_example3.css">
+		
+		<!-- INCLUDE JQUERY: -->
+		<script src='slider/js/jquery-1.6.2.min.js'></script>
+
+		<!-- INCLUDE TIMELINER PLUGIN: -->
+		<script src='slider/js/jquery.timeliner.min.js'></script>
+
+		<!-- INITIATE TIMELINER PLUGIN: -->
+		<script>
+			$(document).ready(function(){
+
+				// EXAMPLE 1:
+				$('#example1').timeliner();
+
+				// EXAMPLE 2:
+				$('#example2').timeliner({
+					tooltipposition: 'below',
+					timelinewidth: 710,
+					timelineverticalmargin: 35,
+					transition: 'slide'
+				});
+
+				// EXAMPLE 3:
+				$('#example3').timeliner({
+					containerwidth: 600,
+					containerheight: 300,
+					timelinewidth: 550,
+					timelineheight: 3,
+					timelineverticalmargin: 0,
+					autoplay: false,
+					showtooltiptime: true,
+					repeat: false,
+					showtotaltime:true,
+					timedisplayposition: 'below',
+					transition: 'fade'
+				});
+
+			});
+
+			// Callback function examples:
+			function start_callback(id){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" started');
+				}
+			}
+			function newslide_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" changed to slide '+slide);
+				}
+			}
+			function end_callback(id){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" ended');
+				}
+			}
+			function paused_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" paused at slide '+slide);
+				}
+			}
+			function resumed_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" resumed at slide '+slide);
+				}
+			}
+			function click_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Clicked on slide '+slide+' of Timeliner "'+id+'"');
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="content">
+
+			<!-- EXAMPLE 1 -->
+			<ul id="example1" class="timeliner">
+				<li title="Slide one" style="background:url(slider/images/slide1.jpg)"></li>
+				<li title="Slide two" lang="5">
+					This is HTML text. It could also be flash, embedded video etc.<br>
+					More examples and technical info below.
+				</li>
+				<li title="Slide three with a long title<br>and a line-break" lang="5">
+					This example will repeat automatically. It can also stop at the last slide if you want it to.
+				</li>
+				<!-- Flash:
+				<li title="Flash example (YouTube embed)" lang="20">
+					<object width="200" height="180">
+						<param name="wmode" value="opaque"></param>
+						<param name="movie" value="http://www.youtube.com/v/wgQNx_aRZgk?version=3&amp;hl=en_GB&amp;rel=0"></param>
+						<param name="allowfullscreen" value="true"></param>
+						<param name="allowscriptaccess" value="always"></param>
+						<embed src="http://www.youtube.com/v/wgQNx_aRZgk?version=3&amp;hl=en_GB&amp;rel=0" type="application/x-shockwave-flash" width="200" height="180" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>
+					</object>
+				</li>
+				-->
+			</ul>
+			<!-- END EXAMPLE 1 -->
+
+			<br>
+		
+	</body>
+</html>
+</body>
+</html>

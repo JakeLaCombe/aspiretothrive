@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Good-Natured
+   
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20120817
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Aspire to Thrive</title>
+<link href="style.css" rel="stylesheet"/> 
+		<link rel="stylesheet" href="slider/css/demo.css">
+		
+		<!-- INCLUDE TIMELINER CSS: -->
+		<link rel="stylesheet" href="slider/css/timeliner.css">
+		<link rel="stylesheet" href="slider/css/timeliner_styling.css">
+		
+		
+		<!-- INCLUDE JQUERY: -->
+		<script src='slider/js/jquery-1.6.2.min.js'></script>
+
+		<!-- INCLUDE TIMELINER PLUGIN: -->
+		<script src='slider/js/jquery.timeliner.min.js'></script>
+
+		<!-- INITIATE TIMELINER PLUGIN: -->
+		<script>
+			$(document).ready(function(){
+
+				// EXAMPLE 1:
+				$('#example1').timeliner();
+
+				// EXAMPLE 2:
+				$('#example2').timeliner({
+					tooltipposition: 'below',
+					timelinewidth: 710,
+					timelineverticalmargin: 35,
+					transition: 'slide'
+				});
+
+				// EXAMPLE 3:
+				$('#example3').timeliner({
+					containerwidth: 600,
+					containerheight: 300,
+					timelinewidth: 550,
+					timelineheight: 3,
+					timelineverticalmargin: 0,
+					autoplay: false,
+					showtooltiptime: true,
+					repeat: false,
+					showtotaltime:true,
+					timedisplayposition: 'below',
+					transition: 'fade'
+				});
+
+			});
+
+			// Callback function examples:
+			function start_callback(id){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" started');
+				}
+			}
+			function newslide_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" changed to slide '+slide);
+				}
+			}
+			function end_callback(id){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" ended');
+				}
+			}
+			function paused_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" paused at slide '+slide);
+				}
+			}
+			function resumed_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" resumed at slide '+slide);
+				}
+			}
+			function click_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Clicked on slide '+slide+' of Timeliner "'+id+'"');
+				}
+			}
+		</script>
+
+</head>
+<body>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="image">
+			<img src="aspire1.gif" width="387" height="75"/>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="mentor.php?id=1">Login</a></li>
+                <li><a href="#">About</a></li>
+			</ul>
+		</div>
+       <br/>
+       <br/>
+       <br/> 
+      <div id="slider">
+           <!-- EXAMPLE 1 -->
+			<ul id="example1" class="timeliner">
+				<li title="Slide one" style="background:url(slider/images/slide1.jpg)"></li>
+				<li title="Slide two" lang="5">
+					This is HTML text. It could also be flash, embedded video etc.<br>
+					More examples and technical info below.
+				</li>
+				<li title="Slide three with a long title<br>and a line-break" lang="5">
+					This example will repeat automatically. It can also stop at the last slide if you want it to.
+				</li>
+				<!-- Flash:
+				<li title="Flash example (YouTube embed)" lang="20">
+					<object width="200" height="180">
+						<param name="wmode" value="opaque"></param>
+						<param name="movie" value="http://www.youtube.com/v/wgQNx_aRZgk?version=3&amp;hl=en_GB&amp;rel=0"></param>
+						<param name="allowfullscreen" value="true"></param>
+						<param name="allowscriptaccess" value="always"></param>
+						<embed src="http://www.youtube.com/v/wgQNx_aRZgk?version=3&amp;hl=en_GB&amp;rel=0" type="application/x-shockwave-flash" width="200" height="180" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>
+					</object>
+				</li>
+				-->
+			</ul>
+			<!-- END EXAMPLE 1 -->
+
+			<br>
+            <div id="slidershadow">
+               <img src="images/img04.png" width="660" height="50"/> 
+            </div>
+        </div><!---closes slider--> 
+	</div>
+    
+</div>
+
+<div id="footer-content" class="container">
+
+	<div id="footer-bg">
+		<div id="column1">
+			<h2><a href="registration.php">Aspire to Thrive!</a></h2>
+			<p>Ready to change? We have thousands of professionals ready to mentor you in a variety of career fields!<br />
+			</p>
+		</div>
+		<div id="column2">
+			<h2>Aspire to Change!</h2>
+			<p>Step up for change! You can make the difference in a youth's life by being the support they need! Be a mentor today!</p>
+		</div>
+		<div id="column3">
+			<h2>Aspire to Support!</h2>
+              <p>OUr site can always use assistance! Sign up to be a website sponsor!</p>
+		</div>
+	</div>
+</div>
+<div id="footer">
+  <div id="footershadow">
+     <img src="images/img04.png" width="660" height="50"/> 
+   </div>
+	<p>Customized from a theme by Untitled Inc. © 2012 All rights reserved.</p>
+    </div>
+
+<!-- end #footer -->
+</body>
+</html>
