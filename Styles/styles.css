@@ -1,0 +1,129 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Template styles*/
+html
+{
+	width: 100%;
+	height: 100%;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+body
+{
+	background-color:#778691;
+}
+
+#body-wrapper
+{
+	width:900px;
+	background-color:#FFF;
+	margin: 50px auto;
+	padding:10px;
+}
+
+section div
+{
+	display:inline-block;
+	vertical-align:top;
+}
+
+section > div
+{
+	width:40%;
+}
+
+section div:first-child
+{
+	margin-right:10%;
+}
+
+/* All subsections for profiles should
+   have a border underneath */
+#wall h1, #team-mates h1, #news h1
+{
+	border-bottom:#000 solid 3px;
+}
+
+/* Message wall styles */
+#wall img
+{
+	float:left;
+}
+
+#wall h2, #wall p
+{
+	font-size:small;
+	margin-top:0px;
+	font-weight:normal;
+	margin-left:5px;
+	width:250px;
+}
+
+#wall article
+{
+	border-top:#CCC solid 1px;
+	padding-top:5px;
+	clear:both;
+	overflow:auto;
+	padding-bottom:5px;
+}
+
+/* News styles*/
+#news article
+{
+	font-size:small;
+}
+
+#more-news
+{
+	font-size:small;
+	text-align:center;
+	border-top:#eee solid 1px;
+	display:block;
+}
+
+/* profile cards */
+.profile-block
+{
+	border:#C7B773 solid 10px;
+	background-color:#F5FCD0;
+}
+
+.profile-block img
+{
+	float:left;
+}
+
+.profile-information
+{
+	display:inline-block;
+	margin-left:10px;
+}
+
+.profile-information p
+{
+	font-size:small;
+	margin-top:0px;
+	margin-bottom:5px;
+	padding:0px;
+}
+
+/* Teammates section */
+#team-mates img
+{
+	vertical-align:middle;
+}
+
+#team-mates article
+{
+	margin:5px inherit;
+\	border-top:#eee solid 1px;
+	padding-top:5px;
+}
+
+/* General all use styles*/
+.first_of_list
+{
+	border-top:none !important;
+}
