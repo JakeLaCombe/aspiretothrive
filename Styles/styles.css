@@ -86,24 +86,32 @@ section div:first-child
 /* profile cards */
 .profile-block
 {
-	border:#C7B773 solid 10px;
-	background-color:#F5FCD0;
+	background-color:#C7B773;
+	min-height:100px;		
 }
 
 .profile-block img
 {
 	float:left;
+	padding:10px;
+	margin:5px 0px 5px 5px;
+	background-color:#FFF;
 }
 
 .profile-information
 {
 	display:inline-block;
-	margin-left:10px;
+	min-height:inherit;
+	background-color:#F5FCD0;
+	margin-top:5px;
+	width:230px;
+	height:120px;
 }
 
 .profile-information p
 {
 	font-size:small;
+	margin:0px 0px 5px 5px;
 	margin-top:0px;
 	margin-bottom:5px;
 	padding:0px;
@@ -118,8 +126,16 @@ section div:first-child
 #team-mates article
 {
 	margin:5px inherit;
-\	border-top:#eee solid 1px;
+	border-top:#eee solid 1px;
 	padding-top:5px;
+}
+
+/* Mentor information for mentee profiles*/
+#mentor-information h1
+{
+	margin:0px;
+	border-bottom:#000 solid 3px;
+	margin-bottom:5px;
 }
 
 /* General all use styles*/
